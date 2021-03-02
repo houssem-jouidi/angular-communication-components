@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 
-export class EventDriverService {
+export class EventDrivenService {
   sourceEventSubject: Subject<ActionEvent> = new Subject<ActionEvent>();
   sourceEventSubjectObservable = this.sourceEventSubject.asObservable();
   constructor(){}

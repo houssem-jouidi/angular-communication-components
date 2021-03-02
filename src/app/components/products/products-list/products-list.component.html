@@ -21,14 +21,13 @@
               <th>Name</th>
               <th>Price</th>
               <th>Quantite</th>
-
-              <th>Available</th>
               <th>Selected</th>
+              <th>Available</th>
+
             </tr>
           </thead>
           <tbody>
             <app-product-item [product]="product"
-            (itemEventEmitter)="onActionEvent($event)"
             *ngFor="let product of results.data" style="display: contents;" >
 
             </app-product-item>

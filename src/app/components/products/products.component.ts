@@ -1,3 +1,4 @@
+import { EventDrivenService } from './../../state/event.driven.service';
 import { ActionEvent, AppDataState, DataStateEnum, ProductActionsTypes } from './../../state/product.state';
 import { Product } from './../../models/product.model';
 import { ProductsService } from './../../services/products.service';
@@ -15,9 +16,17 @@ export class ProductsComponent implements OnInit, OnDestroy {
 products$: Observable<AppDataState<Product[]>> | null = null;
 selectSubscription: Subscription;
 readonly DataStateEnum =  DataStateEnum;
-  constructor(private productService: ProductsService, private router: Router) { }
+  constructor(private productService: ProductsService,
+              private router: Router,
+              private eventDrivenService: EventDrivenService
+              ) { }
 
   ngOnInit(): void {
+    this.eventDrivenService.sourceEventSubjectObservable.subscribe(
+      (actionEvent: ActionEvent) => {
+        this.onActionEvent(actionEvent);
+      }
+    );
   }
   onActionEvent($event: ActionEvent): void {
 switch ($event.type) {

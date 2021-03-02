@@ -17,12 +17,12 @@
       "available": false
     },
     {
-      "id": 3,
-      "name": "Imprimante",
-      "price": "1500",
-      "quantity": "500",
+      "name": "pc",
+      "price": "10",
+      "quantity": "100",
       "selected": false,
-      "available": true
+      "available": true,
+      "id": 3
     }
   ]
 }
