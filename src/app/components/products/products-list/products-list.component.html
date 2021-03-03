@@ -1,0 +1,17 @@
+<table class="mt-4" *ngIf="state" class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Selected</th>
+      <th>Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-product-item style="display: contents;" [product]="product" *ngFor="let product of state.products" ></app-product-item>
+
+
+  </tbody>
+</table>
